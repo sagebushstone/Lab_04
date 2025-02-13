@@ -37,8 +37,12 @@ public class FortuneTellerFrame extends JFrame {
 
         outerScroller = new JScrollPane(mainPnl);
 
-        setTitle("Fortune Teller Bushstone");
         setSize(500, 700);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-getSize().width/2, dim.height/2-getSize().height/2);
+
+
+        setTitle("Fortune Teller Bushstone");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(outerScroller);
         setVisible(true);
@@ -74,7 +78,9 @@ public class FortuneTellerFrame extends JFrame {
         midPnl = new JPanel();
 
         displayTA = new JTextArea(15, 40);
+        displayTA.setEditable(false);
         scroller = new JScrollPane(displayTA);
+
 
         midPnl.add(scroller);
     }
